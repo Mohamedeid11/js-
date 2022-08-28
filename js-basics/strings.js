@@ -1,20 +1,20 @@
-var message = 'This is my First my message';
+// var message = 'This is my First my message';
 
-//it's a variable string and u can use it as object tooo
+// //it's a variable string and u can use it as object tooo
 
-console.log(message);
+// console.log(message);
 
 
-// escape notation see the documntation
+// // escape notation see the documntation
 
-var message = 'This is my First my \' message';
+// var message = 'This is my First my \' message';
 
-//it's a variable string and u can use it as object tooo
+// //it's a variable string and u can use it as object tooo
 
-console.log(message);
+// console.log(message);
 
-var message = 'This is my First my \n message';
+// var message = 'This is my First my \n message';
 
-//it's a variable string and u can use it as object tooo
+// //it's a variable string and u can use it as object tooo
 
-console.log(message);
+// console.log(message);

@@ -120,60 +120,78 @@
 // circule.draw()
 
 
-function Stopwatch(){
+// function Stopwatch(){
 
-    let startTime = 0; 
-    let endTime = 0;  
-    let running = 0 ;
-    let durationTime = 0 ;
+//     let startTime = 0; 
+//     let endTime = 0;  
+//     let running = 0 ;
+//     let durationTime = 0 ;
 
-    this.start = function (){
-        if (running)
-            throw new Error('already started')
+//     this.start = function (){
+//         if (running)
+//             throw new Error('already started')
 
-        running = true;
+//         running = true;
 
-        var current = new Date();
+//         var current = new Date();
 
-        startTime = current.getSeconds();
-    };
+//         startTime = current.getSeconds();
+//     };
 
-    this.stop = function(){
-        if(!running)
-            throw new Error('you need to start first');
+//     this.stop = function(){
+//         if(!running)
+//             throw new Error('you need to start first');
 
-        running = false;
+//         running = false;
         
-        var date = new Date();
+//         var date = new Date();
 
-        endTime = date.getSeconds();
-    };
+//         endTime = date.getSeconds();
+//     };
 
-    this.duration = function(){
+//     this.duration = function(){
 
-        if(startTime == 0)
-           throw new Error('you need to start first');
+//         if(startTime == 0)
+//            throw new Error('you need to start first');
 
-        if(endTime == 0)
-            throw new Error('You need to stop the watch first');
+//         if(endTime == 0)
+//             throw new Error('You need to stop the watch first');
 
-        durationTime = (endTime - startTime);
+//         durationTime = (endTime - startTime);
 
-        console.log(durationTime);
+//         console.log(durationTime);
 
-        running = false;
+//         running = false;
 
-    };
+//     };
 
-    this.reset = function() {
-        startTime = 0;
-        endTime = 0 ;
-        running = false;
-        durationTime = 0;
+//     this.reset = function() {
+//         startTime = 0;
+//         endTime = 0 ;
+//         running = false;
+//         durationTime = 0;
+//     }
+// }
+
+// var sw = new Stopwatch()
+
+
+// Conditions In Java Script 
+
+
+/*
+    Hour 
+    If Hour Between 6 am and 12 pm alert message goodMorning
+    IF hour Between 12 Pm and 6 Pm alert Message Goodafternone 
+    IF hour Between 6 Pm and 12pm alert Message GoodEvening
+ */
+
+    let Hour = 17 ;
+
+    if( Hour >= 6 && Hour < 12){
+      console.log("Good Morning");
+    }else if(Hour >= 12 && Hour < 18){
+      console.log("Good Afeternoon");
+    }else{
+      console.log("Good Evening");
     }
-}
-
-var sw = new Stopwatch()
-
-
-
