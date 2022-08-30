@@ -120,6 +120,9 @@
 // circule.draw()
 
 
+    // ------------------------------------------------------------------------------------------------------------------------------------
+                                                          // Task
+
 // function Stopwatch(){
 
 //     let startTime = 0; 
@@ -176,9 +179,9 @@
 // var sw = new Stopwatch()
 
 
-// Conditions In Java Script 
 
-
+    // ------------------------------------------------------------------------------------------------------------------------------------
+                                                          // Conditions In Java Script 
 /*
     Hour 
     If Hour Between 6 am and 12 pm alert message goodMorning
@@ -196,17 +199,65 @@
     //   console.log("Good Evening");
     // }
 
+    // ------------------------------------------------------------------------------------------------------------------------------------
+                                                                    // Loop
     // --> initialExpression    => is the value to start the loop
     // --> condition            => the loop runs when this condition is true if it false the loop excute 
     // --> incrementExpresion   => to increment the initialExpression
 
     // for (initialExpression ; condition ; incrementExpresion]){}
 
-    for (let i = 1  ; i <= 5 ; i++){
-      console.log('Hello World' , i)
-    }
+    // for (let i = 1  ; i <= 5 ; i++){
+    //   console.log('Hello World' , i)
+    // }
 
-    for (let i = 1  ; i <= 5 ; i++){
-      if(i % 2 != 0)
-        console.log('hi', i)
+    // for (let i = 1  ; i <= 5 ; i++){
+    //   if(i % 2 != 0)
+    //     console.log('hi', i)
+    // }
+
+    // ------------------------------------------------------------------------------------------------------------------------------------
+                                                                    // Factory Function 
+/*
+  const circle = {
+    radius : 1,
+    location :{
+      x: 1,
+      y : 1
+    },
+    isVisble : true ,
+    draw : function(){
+      console.log('draw');
     }
+  };       
+
+  const circle2 = {
+    radius : 1,
+    location :{
+      x: 1,
+      y : 1
+    },
+    isVisble : true ,
+    draw : function(){
+      console.log('draw');
+    }
+  };          
+
+  instead of multiplaying the obejct we could easily make a function and inhearte the proparities 
+*/
+
+function createCircle(radius){
+  return{
+    radius : radius,
+    // draw()  ==> this equal to function draw(){}
+    draw () {
+      console.log('draw');
+    }
+  }
+}
+
+const circle1 = createCircle(1);
+  console.log(circle1);
+
+const circle2 = createCircle(2);
+console.log(circle2);
