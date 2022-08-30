@@ -265,16 +265,38 @@
 
     // ------------------------------------------------------------------------------------------------------------------------------------
                                                                     // Constructor Function
-function Circl (radius) {
-  this.radius = radius;
-  this.draw = function (){
-    console.log('draw');
-  }
-}
+// function Circl (radius) {
+//   this.radius = radius;
+//   this.draw = function (){
+//     console.log('draw');
+//   }
+// }
 
-circl = new Circl(1)
-console.log (circl)
+// circl = new Circl(1)
+// console.log (circl)
 
-circl2 = new Circl(2)
-console.log (circl2)
+// circl2 = new Circl(2)
+// console.log (circl2)
+
+    // ------------------------------------------------------------------------------------------------------------------------------------
+                                                                    // getter and setter 
+const person = {
+  firstName :"Mohamed",
+  lastName  : "Eid",
+  
+  get fullName () {
+    return `${person.firstName} ${person.lastName}`;
+  },
+  set fullName (value){
+    const parts = value.split(' ');
+
+    person.firstName = parts[0];
+    person.lastName = parts[1];
+  },
+};
+
+person.fullName = 'Memo Dragon'; // this to deal with setter 
+
+console.log(person.fullName); // this to deal with getter
+console.log(person);
 
