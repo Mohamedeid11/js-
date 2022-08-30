@@ -246,18 +246,35 @@
   instead of multiplaying the obejct we could easily make a function and inhearte the proparities 
 */
 
-function createCircle(radius){
-  return{
-    radius : radius,
-    // draw()  ==> this equal to function draw(){}
-    draw () {
-      console.log('draw');
-    }
+// function createCircle(radius){
+//   return{
+//     radius : radius,
+//     // draw()  ==> this equal to function draw(){}
+//     draw () {
+//       console.log('draw');
+//     }
+//   }
+// }
+
+// const circle1 = createCircle(1);
+//   console.log(circle1);
+
+// const circle2 = createCircle(2);
+// console.log(circle2);
+
+
+    // ------------------------------------------------------------------------------------------------------------------------------------
+                                                                    // Constructor Function
+function Circl (radius) {
+  this.radius = radius;
+  this.draw = function (){
+    console.log('draw');
   }
 }
 
-const circle1 = createCircle(1);
-  console.log(circle1);
+circl = new Circl(1)
+console.log (circl)
 
-const circle2 = createCircle(2);
-console.log(circle2);
+circl2 = new Circl(2)
+console.log (circl2)
+
