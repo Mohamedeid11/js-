@@ -186,12 +186,27 @@
     IF hour Between 6 Pm and 12pm alert Message GoodEvening
  */
 
-    let Hour = 17 ;
+    // let Hour = 17 ;
 
-    if( Hour >= 6 && Hour < 12){
-      console.log("Good Morning");
-    }else if(Hour >= 12 && Hour < 18){
-      console.log("Good Afeternoon");
-    }else{
-      console.log("Good Evening");
+    // if( Hour >= 6 && Hour < 12){
+    //   console.log("Good Morning");
+    // }else if(Hour >= 12 && Hour < 18){
+    //   console.log("Good Afeternoon");
+    // }else{
+    //   console.log("Good Evening");
+    // }
+
+    // --> initialExpression    => is the value to start the loop
+    // --> condition            => the loop runs when this condition is true if it false the loop excute 
+    // --> incrementExpresion   => to increment the initialExpression
+
+    // for (initialExpression ; condition ; incrementExpresion]){}
+
+    for (let i = 1  ; i <= 5 ; i++){
+      console.log('Hello World' , i)
+    }
+
+    for (let i = 1  ; i <= 5 ; i++){
+      if(i % 2 != 0)
+        console.log('hi', i)
     }
