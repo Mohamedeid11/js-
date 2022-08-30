@@ -280,23 +280,66 @@
 
     // ------------------------------------------------------------------------------------------------------------------------------------
                                                                     // getter and setter 
-const person = {
-  firstName :"Mohamed",
-  lastName  : "Eid",
+// const person = {
+//   firstName :"Mohamed",
+//   lastName  : "Eid",
   
-  get fullName () {
-    return `${person.firstName} ${person.lastName}`;
-  },
-  set fullName (value){
-    const parts = value.split(' ');
+//   get fullName () {
+//     return `${person.firstName} ${person.lastName}`;
+//   },
+//   set fullName (value){
+//     const parts = value.split(' ');
 
-    person.firstName = parts[0];
-    person.lastName = parts[1];
-  },
-};
+//     person.firstName = parts[0];
+//     person.lastName = parts[1];
+//   },
+// };
 
-person.fullName = 'Memo Dragon'; // this to deal with setter 
+// person.fullName = 'Memo Dragon'; // this to deal with setter 
 
-console.log(person.fullName); // this to deal with getter
-console.log(person);
+// console.log(person.fullName); // this to deal with getter
+// console.log(person);
 
+// ------------------------------------------------------------------------------------------------------------------------------------
+                                                                    // Value vs Reference types
+
+let x = 10;
+
+let y = x;
+
+x = 20;
+
+console.log(y)
+
+
+let z = {value : 10};
+
+let h = x;
+
+z.value = 20;
+
+console.log(z.value)
+
+let number = 10;
+
+function increase (number){
+  number++;
+}
+
+increase(number);
+
+console.log(number);
+
+let obj = {value :1};
+
+function increase (obj){
+  obj.value++;
+
+}
+
+for(let i = 0 ; i < 10 ; i++){
+
+  increase(obj);
+  console.log(obj.value);
+  
+}
