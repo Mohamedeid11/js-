@@ -379,26 +379,53 @@
 // ------------------------------------------------------------------------------------------------------------------------------------
                                                                     // Let vs Var vs Const
 
-function end(){
-  for(var x = 10 ; x > 5 ; x-- ){
-    console.log(x);
-  }
-  console.log(x);
-}
+// function end(){
+//   for(var x = 10 ; x > 5 ; x-- ){
+//     console.log(x);
+//   }
+//   console.log(x);
+// }
                                                                     
 
 
-function start(){
-  for(let i = 0 ; i < 5 ; i++ ){
-    console.log(i)
-  }
-  console.log(i)
-}
+// function start(){
+//   for(let i = 0 ; i < 5 ; i++ ){
+//     console.log(i)
+//   }
+//   console.log(i)
+// }
 
-end()
+// end()
 
-start()
+// start()
 
 // Var => use to declare golbal variables 
 // ES6 (ES2015) : Let , Const => to declare local variables start
 
+// ------------------------------------------------------------------------------------------------------------------------------------
+                                                                    // Cloning and object
+
+let circle ={
+  radius : 1 ,
+  draw()  {
+    console.log('draw');
+  }
+};
+
+let another = {};
+for(let key in circle ){
+ another[key] = circle[key];
+}
+console.log(another);
+
+
+let other = Object.assign({}, circle); // in this we could clone or obtain  one or more sorce object 
+console.log(other);
+
+
+let Mohamed = {...circle};  // in this we can clone or obtain just one object
+console.log(Mohamed);
+
+
+let others = Object.assign({color : 'red'}, circle); //in the Object.assign we can add to object
+console.log(others);
