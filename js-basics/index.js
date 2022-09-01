@@ -303,43 +303,76 @@
 // ------------------------------------------------------------------------------------------------------------------------------------
                                                                     // Value vs Reference types
 
-let x = 10;
+// let x = 10;
 
-let y = x;
+// let y = x;
 
-x = 20;
+// x = 20;
 
-console.log(y)
+// console.log(y)
 
 
-let z = {value : 10};
+// let z = {value : 10};
 
-let h = x;
+// let h = x;
 
-z.value = 20;
+// z.value = 20;
 
-console.log(z.value)
+// console.log(z.value)
 
-let number = 10;
+// let number = 10;
 
-function increase (number){
-  number++;
-}
+// function increase (number){
+//   number++;
+// }
 
-increase(number);
+// increase(number);
 
-console.log(number);
+// console.log(number);
 
-let obj = {value :1};
+// let obj = {value :1};
 
-function increase (obj){
-  obj.value++;
+// function increase (obj){
+//   obj.value++;
 
-}
+// }
 
-for(let i = 0 ; i < 10 ; i++){
+// for(let i = 0 ; i < 10 ; i++){
 
-  increase(obj);
-  console.log(obj.value);
+//   increase(obj);
+//   console.log(obj.value);
   
+// }
+
+// ------------------------------------------------------------------------------------------------------------------------------------
+                                                                    // Scope Local vs Global
+var color = 'Red';
+console.log(color);
+
+
+function messages(){
+  var message1 = 'Mohamed';
+  console.log(message1);
+
+  if(true){
+    var color = 'Blue';
+    console.log(color);
+    var message2 = "Eid";
+    console.log(message1);
+  }
+
+  console.log(message2);
+
+  for(var i = 1 ; i <= 5 ; i++){
+    console.log(i);
+  }
+  console.log(i);
+
+  console.log(color);
 }
+
+messages();
+
+console.log(message1);
+
+
