@@ -346,33 +346,59 @@
 
 // ------------------------------------------------------------------------------------------------------------------------------------
                                                                     // Scope Local vs Global
-var color = 'Red';
-console.log(color);
+// let color = 'Red';
+// console.log(color);
 
 
-function messages(){
-  var message1 = 'Mohamed';
-  console.log(message1);
+// function messages(){
+//   let message1 = 'Mohamed';
+//   console.log(message1);
 
-  if(true){
-    var color = 'Blue';
-    console.log(color);
-    var message2 = "Eid";
-    console.log(message1);
+//   if(true){
+//     let color = 'Blue';
+//     console.log(color);
+//     let message2 = "Eid";
+//     console.log(message1);
+//   }
+
+//   console.log(message2);
+
+//   for(let i = 1 ; i <= 5 ; i++){
+//     console.log(i);
+//   }
+//   console.log(i);
+
+//   console.log(color);
+// }
+
+// messages();
+
+// console.log(message1);
+
+
+// ------------------------------------------------------------------------------------------------------------------------------------
+                                                                    // Let vs Var vs Const
+
+function end(){
+  for(var x = 10 ; x > 5 ; x-- ){
+    console.log(x);
   }
+  console.log(x);
+}
+                                                                    
 
-  console.log(message2);
 
-  for(var i = 1 ; i <= 5 ; i++){
-    console.log(i);
+function start(){
+  for(let i = 0 ; i < 5 ; i++ ){
+    console.log(i)
   }
-  console.log(i);
-
-  console.log(color);
+  console.log(i)
 }
 
-messages();
+end()
 
-console.log(message1);
+start()
 
+// Var => use to declare golbal variables 
+// ES6 (ES2015) : Let , Const => to declare local variables start
 
