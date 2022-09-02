@@ -437,44 +437,58 @@
 
 // if the function not method (regular function) when calling this  ==> it references to the golbal object
 
-let video = {
-  title : 'a', 
-  play () {
-    console.log(this);
-  }
-}
+// let video = {
+//   title : 'a', 
+//   play () {
+//     console.log(this);
+//   }
+// }
 
-video.play();
+// video.play();
 
-video.stop = function (){
-  console.log(this);
-};
+// video.stop = function (){
+//   console.log(this);
+// };
 
-video.stop();
+// video.stop();
 
 
-//constructor functions 
-function playVideo(){
-  console.log(this);
-}
+// //constructor functions 
+// function playVideo(){
+//   console.log(this);
+// }
 
-playVideo();
+// playVideo();
 
-function Video (title){
-  this.title = title;
-  console.log(this);
-}
+// function Video (title){
+//   this.title = title;
+//   console.log(this);
+// }
 
-let v = new Video('Mohamed');
+// let v = new Video('Mohamed');
 
-let videoGame = {
-  title : 'videoGame',
-  tages : ['video 1' , 'video 2' , 'video 3'],
-  show () {
-    this.tages.forEach(function (tag){
-        console.log(this.title ,tag);
-    }, this)  
-  }
-}
+// let videoGame = {
+//   title : 'videoGame',
+//   tages : ['video 1' , 'video 2' , 'video 3'],
+//   show () {
+//     this.tages.forEach(function (tag){
+//         console.log(this.title ,tag);
+//     }, this)  
+//   }
+// }
 
-videoGame.show();
+// videoGame.show();
+
+// ------------------------------------------------------------------------------------------------------------------------------------
+                                                                    // Template Literals
+
+let name = 'Mohamed';
+
+let message = 'some kind of messages \n anoter line on tne message and Hi ' + name + ' Welcome';
+console.log(message);
+
+
+let another = `some kind of messages 
+  another line on the message ${name} welcome 
+  ${1 + 1000} do what ever u want here it well take the style what u doing and print it on the screen `;
+  console.log(another);
