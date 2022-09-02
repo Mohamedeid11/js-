@@ -495,15 +495,47 @@
 // ------------------------------------------------------------------------------------------------------------------------------------
                                                                     // Array Filter 
 
-let numbers = [-100 , 1000, -1 , 0 , 1 , 2 , 3 ];
+// let numbers = [-100 , 1000, -1 , 0 , 1 , 2 , 3 ];
 
-let filtered = numbers.filter(function(value){
-  return value >= 0 ;
-});
+// let filtered = numbers.filter(function(value){
+//   return value >= 0 ;
+// });
 
-console.log(filtered);
+// console.log(filtered);
 
 
-let filter = numbers.filter(value => value >= 0);
+// let filter = numbers.filter(value => value >= 0);
 
+// console.log(filter);
+
+// ------------------------------------------------------------------------------------------------------------------------------------
+                                                                    // Array Map
+
+let numbers = [0 , -1, -100 , 1 , 2 , 3 , 4 ];
+
+let filter = numbers.filter(value => value > 0);
 console.log(filter);
+
+
+let mapping = numbers.map(value => value ); 
+console.log(mapping);
+
+
+let mapping1 = filter.map(value => ' <li> ' + value + ' </li> '); // returnint the vlues as numbers or integers
+console.log(mapping1);
+
+
+let html ='<ul> \n '+ mapping1.join(' \n ') + ' \n</ul>';
+console.log(html);
+
+
+let mappings = filter.map(value => ({key : value })); // to get the values as object
+console.log(mappings);
+
+let items =
+            `<ul>
+ ${numbers.filter(value => value > 0).map(value => ' <li> ' + value + ' <li> \n').join(' ')}</ul>`;         //chain constance
+console.log(items);
+
+
+
