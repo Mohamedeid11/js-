@@ -511,31 +511,58 @@
 // ------------------------------------------------------------------------------------------------------------------------------------
                                                                     // Array Map
 
-let numbers = [0 , -1, -100 , 1 , 2 , 3 , 4 ];
+// let numbers = [0 , -1, -100 , 1 , 2 , 3 , 4 ];
 
-let filter = numbers.filter(value => value > 0);
-console.log(filter);
-
-
-let mapping = numbers.map(value => value ); 
-console.log(mapping);
+// let filter = numbers.filter(value => value > 0);
+// console.log(filter);
 
 
-let mapping1 = filter.map(value => ' <li> ' + value + ' </li> '); // returnint the vlues as numbers or integers
-console.log(mapping1);
+// let mapping = numbers.map(value => value ); 
+// console.log(mapping);
 
 
-let html ='<ul> \n '+ mapping1.join(' \n ') + ' \n</ul>';
-console.log(html);
+// let mapping1 = filter.map(value => ' <li> ' + value + ' </li> '); // returnint the vlues as numbers or integers
+// console.log(mapping1);
 
 
-let mappings = filter.map(value => ({key : value })); // to get the values as object
-console.log(mappings);
+// let html ='<ul> \n '+ mapping1.join(' \n ') + ' \n</ul>';
+// console.log(html);
 
-let items =
-            `<ul>
- ${numbers.filter(value => value > 0).map(value => ' <li> ' + value + ' <li> \n').join(' ')}</ul>`;         //chain constance
-console.log(items);
+
+// let mappings = filter.map(value => ({key : value })); // to get the values as object
+// console.log(mappings);
+
+// let items =
+//             `<ul>
+//  ${numbers.filter(value => value > 0).map(value => ' <li> ' + value + ' <li> \n').join(' ')}</ul>`;         //chain constance
+// console.log(items);
+
+// ------------------------------------------------------------------------------------------------------------------------------------
+                                                                    // Array Map
+
+let numbers = [-1 , 0 , 1 , 2 , 3];
+
+let sum = 0;
+
+for (let n of numbers){
+  sum +=  n;
+}
+
+console.log(sum);
+
+
+//previousValue is the start of index 0 in the array and then the reduce make a loop to the next index of the array 
+//currentValue  is the start of index 1 in the array and then the reduce make a loop to the next index of the array 
+
+let summtion = numbers.reduce((previousValue , currentValue ) => previousValue + currentValue , );
+console.log( summtion );
+
+// previousValue = -1 , currentValue = 0 then  previousValue = -1
+// previousValue = -1 , currentValue = 1 then  previousValue =  0
+// previousValue =  0 , currentValue = 2 then  previousValue =  2
+// previousValue =  2 , currentValue = 3 then  previousValue =  5
+
+
 
 
 
