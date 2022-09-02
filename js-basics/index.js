@@ -482,13 +482,28 @@
 // ------------------------------------------------------------------------------------------------------------------------------------
                                                                     // Template Literals
 
-let name = 'Mohamed';
+// let name = 'Mohamed';
 
-let message = 'some kind of messages \n anoter line on tne message and Hi ' + name + ' Welcome';
-console.log(message);
+// let message = 'some kind of messages \n anoter line on tne message and Hi ' + name + ' Welcome';
+// console.log(message);
 
 
-let another = `some kind of messages 
-  another line on the message ${name} welcome 
-  ${1 + 1000} do what ever u want here it well take the style what u doing and print it on the screen `;
-  console.log(another);
+// let another = `some kind of messages 
+//   another line on the message ${name} welcome 
+//   ${1 + 1000} do what ever u want here it well take the style what u doing and print it on the screen `;
+//   console.log(another);
+// ------------------------------------------------------------------------------------------------------------------------------------
+                                                                    // Array Filter 
+
+let numbers = [-100 , 1000, -1 , 0 , 1 , 2 , 3 ];
+
+let filtered = numbers.filter(function(value){
+  return value >= 0 ;
+});
+
+console.log(filtered);
+
+
+let filter = numbers.filter(value => value >= 0);
+
+console.log(filter);
