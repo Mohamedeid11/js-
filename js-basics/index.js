@@ -405,27 +405,76 @@
 // ------------------------------------------------------------------------------------------------------------------------------------
                                                                     // Cloning and object
 
-let circle ={
-  radius : 1 ,
-  draw()  {
-    console.log('draw');
+// let circle ={
+//   radius : 1 ,
+//   draw()  {
+//     console.log('draw');
+//   }
+// };
+
+// let another = {};
+// for(let key in circle ){
+//  another[key] = circle[key];
+// }
+// console.log(another);
+
+
+// let other = Object.assign({}, circle); // in this we could clone or obtain  one or more sorce object 
+// console.log(other);
+
+
+// let Mohamed = {...circle};  // in this we can clone or obtain just one object
+// console.log(Mohamed);
+
+
+// let others = Object.assign({color : 'red'}, circle); //in the Object.assign we can add to object
+// console.log(others);
+
+// ------------------------------------------------------------------------------------------------------------------------------------
+                                                                    // this key word
+
+//if the function is  Method (function part of object ) when calling this  ==> it refernces to the object it self 
+
+// if the function not method (regular function) when calling this  ==> it references to the golbal object
+
+let video = {
+  title : 'a', 
+  play () {
+    console.log(this);
   }
+}
+
+video.play();
+
+video.stop = function (){
+  console.log(this);
 };
 
-let another = {};
-for(let key in circle ){
- another[key] = circle[key];
+video.stop();
+
+
+//constructor functions 
+function playVideo(){
+  console.log(this);
 }
-console.log(another);
 
+playVideo();
 
-let other = Object.assign({}, circle); // in this we could clone or obtain  one or more sorce object 
-console.log(other);
+function Video (title){
+  this.title = title;
+  console.log(this);
+}
 
+let v = new Video('Mohamed');
 
-let Mohamed = {...circle};  // in this we can clone or obtain just one object
-console.log(Mohamed);
+let videoGame = {
+  title : 'videoGame',
+  tages : ['video 1' , 'video 2' , 'video 3'],
+  show () {
+    this.tages.forEach(function (tag){
+        console.log(this.title ,tag);
+    }, this)  
+  }
+}
 
-
-let others = Object.assign({color : 'red'}, circle); //in the Object.assign we can add to object
-console.log(others);
+videoGame.show();
