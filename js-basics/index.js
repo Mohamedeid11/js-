@@ -119,6 +119,30 @@
 // console.log(circule.defaultLocation)
 // circule.draw()
 
+// var message = 'This is my First my message';
+
+// //it's a variable string and u can use it as object tooo
+
+// console.log(message);
+
+
+// ------------------------------------------------------------------------------------------------------------------------------------
+                                                          // Strings
+
+// // escape notation see the documntation
+
+// var message = 'This is my First my \' message';
+
+// //it's a variable string and u can use it as object tooo
+
+// console.log(message);
+
+// var message = 'This is my First my \n message';
+
+// //it's a variable string and u can use it as object tooo
+
+// console.log(message);
+
 
     // ------------------------------------------------------------------------------------------------------------------------------------
                                                           // Task
@@ -538,31 +562,157 @@
 // console.log(items);
 
 // ------------------------------------------------------------------------------------------------------------------------------------
-                                                                    // Array Map
+                                                                    // Array Reduce
 
-let numbers = [-1 , 0 , 1 , 2 , 3];
+// let numbers = [-1 , 0 , 1 , 2 , 3];
 
-let sum = 0;
+// let sum = 0;
 
-for (let n of numbers){
-  sum +=  n;
+// for (let n of numbers){
+//   sum +=  n;
+// }
+
+// console.log(sum);
+
+
+// //previousValue is the start of index 0 in the array and then the reduce make a loop to the next index of the array 
+// //currentValue  is the start of index 1 in the array and then the reduce make a loop to the next index of the array 
+
+// let summtion = numbers.reduce((previousValue , currentValue ) => previousValue + currentValue , );
+// console.log( summtion );
+
+// // previousValue = -1 , currentValue = 0 then  previousValue = -1
+// // previousValue = -1 , currentValue = 1 then  previousValue =  0
+// // previousValue =  0 , currentValue = 2 then  previousValue =  2
+// // previousValue =  2 , currentValue = 3 then  previousValue =  5
+
+// ------------------------------------------------------------------------------------------------------------------------------------
+                                                                    // Modern JavaScript
+
+// var vs let vs const    when declare with const the variable is read only u can't change it with another variable 
+
+
+//this key word 
+
+let person ={
+  name : 'Mohamed',
+  walk(){
+    console.log(this);
+  }
 }
 
-console.log(sum);
+person.walk();
+
+let walk = person.walk.bind(person);  // here we put bind methode return new instnce of the function and then this point to the person object
+
+walk();
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+              //arrow function
+
+let square = function(number){
+  return number * number;
+}
+
+console.log(square(5));
+
+let cirlcl = radius => radius *  2;
+
+console.log(cirlcl(2));
+
+// in the arrow function we delete the function and the {} 
+// if function doesn't have pramaters (whice is number in the last example) then we just put () 
+// if function have only one pramater we delete the ()
+// if the function body if returnes a value we deletee the return and if have onle single line we delete the {}  
+
+let jobs = [
+   { id : 1 ,isActive : true},
+   { id : 2 ,isActive : true},
+   { id : 3 ,isActive : false},
+  ];
+
+let filter = jobs.filter( job => job.isActive);
+
+console.log(filter);
+
+let vichle = {
+  move(){
+    setTimeout(function (){
+      console.log('this' , this);
+    })
+  }
+}
+
+vichle.move();
+
+let vichle1 = {
+  move(){
+    setTimeout(() => console.log('this' , this)); // here in arraw function it doesn't a bind this 
+  }
+}
+
+vichle1.move();
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+              //object destracting 
+
+let address = { streat : ' streats' , city : ' cities' , country : ' countries' };
+
+// let streat = address.streat;
+// let city = address.city;
+// let country = address.country;
+
+let {streat : st , country : coun} = address ; // this to get the pass the value from object to spacific variable
+
+console.log(st , coun);
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+              //spread operator
+
+let firstArray = [ 1 , 2 , 3] ;
+let secondArray = [ 4 , 5 , 6] ;
+
+let compinedArray = [...firstArray , ...secondArray]; // you could also add more values in the array if u want [...firstArray , 1 , 'a' , ...secondArray , 3 ,'b'];
+console.log(compinedArray);
 
 
-//previousValue is the start of index 0 in the array and then the reduce make a loop to the next index of the array 
-//currentValue  is the start of index 1 in the array and then the reduce make a loop to the next index of the array 
 
-let summtion = numbers.reduce((previousValue , currentValue ) => previousValue + currentValue , );
-console.log( summtion );
+let firstobject = { firstNmae : 'Mohamed'} ;
+let secondobject = {secondName : ' Eid'} ;
 
-// previousValue = -1 , currentValue = 0 then  previousValue = -1
-// previousValue = -1 , currentValue = 1 then  previousValue =  0
-// previousValue =  0 , currentValue = 2 then  previousValue =  2
-// previousValue =  2 , currentValue = 3 then  previousValue =  5
+let compinedObject = {...firstobject , ...secondobject}; // you could also add more values in the Object if u want {...firstobject , thired: value ...secondobject};
+console.log(compinedObject);
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+              //Classes
 
+class Person {
+  constructor(name){
+    this.name = name
+  }
 
+  walk(){
+    console.log('walk from main class');
+  }
+}
 
+let human = new Person('Mohamed');
+
+console.log(human.name);
+
+/////////////////////////// inheartance
+
+class Teacher extends Person {       // here we put extends to inheart from the other class
+  constructor( name ,degree){
+    super(name); //this reference to the inhearted class  and it must be added even u won't use it 
+    this.degree = degree;
+  }
+  teach() {
+    console.log(teach);
+  }
+}
+
+let teacher = new Teacher('Mohamed','Programmer');
+teacher.walk();
+console.log('the great person is ' , teacher.name , ' and he is a ' , teacher.degree)
