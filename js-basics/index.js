@@ -594,125 +594,131 @@
 
 //this key word 
 
-let person ={
-  name : 'Mohamed',
-  walk(){
-    console.log(this);
-  }
-}
+// let person ={
+//   name : 'Mohamed',
+//   walk(){
+//     console.log(this);
+//   }
+// }
 
-person.walk();
+// person.walk();
 
-let walk = person.walk.bind(person);  // here we put bind methode return new instnce of the function and then this point to the person object
+// let walk = person.walk.bind(person);  // here we put bind methode return new instnce of the function and then this point to the person object
 
-walk();
+// walk();
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-              //arrow function
+// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//               //arrow function
 
-let square = function(number){
-  return number * number;
-}
+// let square = function(number){
+//   return number * number;
+// }
 
-console.log(square(5));
+// console.log(square(5));
 
-let cirlcl = radius => radius *  2;
+// let cirlcl = radius => radius *  2;
 
-console.log(cirlcl(2));
+// console.log(cirlcl(2));
 
-// in the arrow function we delete the function and the {} 
-// if function doesn't have pramaters (whice is number in the last example) then we just put () 
-// if function have only one pramater we delete the ()
-// if the function body if returnes a value we deletee the return and if have onle single line we delete the {}  
+// // in the arrow function we delete the function and the {} 
+// // if function doesn't have pramaters (whice is number in the last example) then we just put () 
+// // if function have only one pramater we delete the ()
+// // if the function body if returnes a value we deletee the return and if have onle single line we delete the {}  
 
-let jobs = [
-   { id : 1 ,isActive : true},
-   { id : 2 ,isActive : true},
-   { id : 3 ,isActive : false},
-  ];
+// let jobs = [
+//    { id : 1 ,isActive : true},
+//    { id : 2 ,isActive : true},
+//    { id : 3 ,isActive : false},
+//   ];
 
-let filter = jobs.filter( job => job.isActive);
+// let filter = jobs.filter( job => job.isActive);
 
-console.log(filter);
+// console.log(filter);
 
-let vichle = {
-  move(){
-    setTimeout(function (){
-      console.log('this' , this);
-    })
-  }
-}
+// let vichle = {
+//   move(){
+//     setTimeout(function (){
+//       console.log('this' , this);
+//     })
+//   }
+// }
 
-vichle.move();
+// vichle.move();
 
-let vichle1 = {
-  move(){
-    setTimeout(() => console.log('this' , this)); // here in arraw function it doesn't a bind this 
-  }
-}
+// let vichle1 = {
+//   move(){
+//     setTimeout(() => console.log('this' , this)); // here in arraw function it doesn't a bind this 
+//   }
+// }
 
-vichle1.move();
+// vichle1.move();
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-              //object destracting 
+// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//               //object destracting 
 
-let address = { streat : ' streats' , city : ' cities' , country : ' countries' };
+// let address = { streat : ' streats' , city : ' cities' , country : ' countries' };
 
-// let streat = address.streat;
-// let city = address.city;
-// let country = address.country;
+// // let streat = address.streat;
+// // let city = address.city;
+// // let country = address.country;
 
-let {streat : st , country : coun} = address ; // this to get the pass the value from object to spacific variable
+// let {streat : st , country : coun} = address ; // this to get the pass the value from object to spacific variable
 
-console.log(st , coun);
+// console.log(st , coun);
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-              //spread operator
+// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//               //spread operator
 
-let firstArray = [ 1 , 2 , 3] ;
-let secondArray = [ 4 , 5 , 6] ;
+// let firstArray = [ 1 , 2 , 3] ;
+// let secondArray = [ 4 , 5 , 6] ;
 
-let compinedArray = [...firstArray , ...secondArray]; // you could also add more values in the array if u want [...firstArray , 1 , 'a' , ...secondArray , 3 ,'b'];
-console.log(compinedArray);
-
-
-
-let firstobject = { firstNmae : 'Mohamed'} ;
-let secondobject = {secondName : ' Eid'} ;
-
-let compinedObject = {...firstobject , ...secondobject}; // you could also add more values in the Object if u want {...firstobject , thired: value ...secondobject};
-console.log(compinedObject);
+// let compinedArray = [...firstArray , ...secondArray]; // you could also add more values in the array if u want [...firstArray , 1 , 'a' , ...secondArray , 3 ,'b'];
+// console.log(compinedArray);
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-              //Classes
 
-class Person {
-  constructor(name){
-    this.name = name
-  }
+// let firstobject = { firstNmae : 'Mohamed'} ;
+// let secondobject = {secondName : ' Eid'} ;
 
-  walk(){
-    console.log('walk from main class');
-  }
-}
+// let compinedObject = {...firstobject , ...secondobject}; // you could also add more values in the Object if u want {...firstobject , thired: value ...secondobject};
+// console.log(compinedObject);
 
-let human = new Person('Mohamed');
 
-console.log(human.name);
+// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//               //Classes
 
-/////////////////////////// inheartance
+// class Person {
+//   constructor(name){
+//     this.name = name
+//   }
 
-class Teacher extends Person {       // here we put extends to inheart from the other class
-  constructor( name ,degree){
-    super(name); //this reference to the inhearted class  and it must be added even u won't use it 
-    this.degree = degree;
-  }
-  teach() {
-    console.log(teach);
-  }
-}
+//   walk(){
+//     console.log('walk from main class');
+//   }
+// }
 
-let teacher = new Teacher('Mohamed','Programmer');
-teacher.walk();
-console.log('the great person is ' , teacher.name , ' and he is a ' , teacher.degree)
+// let human = new Person('Mohamed');
+
+// console.log(human.name);
+
+// /////////////////////////// inheartance
+
+// class Teacher extends Person {       // here we put extends to inheart from the other class
+//   constructor( name ,degree){
+//     super(name); //this reference to the inhearted class  and it must be added even u won't use it 
+//     this.degree = degree;
+//   }
+//   teach() {
+//     console.log(teach);
+//   }
+// }
+
+// let teacher = new Teacher('Mohamed','Programmer');
+// teacher.walk();
+// console.log('the great person is ' , teacher.name , ' and he is a ' , teacher.degree);
+
+import  Teacher  from "./teacher"; //here we make the persone readable
+
+const teacher = new Teacher('Mohamed' , 'Programmer');
+
+teacher.teach();
